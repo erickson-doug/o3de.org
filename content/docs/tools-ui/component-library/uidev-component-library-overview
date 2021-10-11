@@ -1,0 +1,316 @@
+---
+linktitle: Cards and Properties
+title: O3DE UI Component Cards and Properties Overview
+description: Learn about the component cards and properties for O3DE's UI.
+toc: true
+---
+
+## Overview
+
+A Component Card is used for grouping the related property settings together for a certain feature. The property settings presented in the Component Card must be presented in a structured and intuitive way to help a user understand how to correctly configure the property settings. If the information isn't presented clearly on the Component Card, a user might get confused, set the wrong values, or miss important information in the settings, all of which could cause system errors or unexpected results.
+
+When designing the information on the Component Card, the following guidelines will help developers and project owners define a set of UX/ UI card property rules.  Following these guidelines will help ensure that the content structure is presented consistently across the product and becomes more intuitive for users once they become familiar with it.
+
+As you design your Component Cards, regularly ask yourself the following:
+
+* How would the component interact with the viewport?
+* Make your component searchable.
+* When creating the property settings on the card, challenge yourself to think if each setting is really necessary. Can we make the decision for the user?
+* Assign a default property setting.
+
+=================
+
+### Before You Start
+
+### Understand your users (and remember, you are not your user)
+
+Before you start designing the component card, make sure you know who will be the main users for using the component. What are their roles in the game team? What is their main responsibility? Are they technical (e.g. programmer or tech artist) or non-technical (e.g. artist or animator)? Make sure you also get a chance to talk to at least 1-2 of your users to validate your understanding about them too before jumping in to design the component. This knowledge will develop an empathy with your users and can help you design a more user friendly component for your users to use.
+
+### Think about the End-to-End workflow (and automate the process for your user to save time and avoid human error)
+
+When designing the component, think about the end-to-end workflow for your component. What is the ultimate goal user want to achieve? What does the overall workflow look like? Are there other dependent components with your component? With the understanding of this end-to-end workflow, you can think ahead for your users, and help your user **automate** their workflow as much as possible to save time.
+
+**Example:**
+
+If user add a Mesh asset to the entity, if the Mesh asset comes with Materials, we should automatically add both the Mesh component and Material component to the entity, and automatically assign the materials to the Material component.
+
+* * *
+
+Design Guidelines
+=================
+
+### There should never be component card without properties
+
+All component cards should come with properties inside them. If the component doesn't have any properties, then the component should not exist, or the component should be combined with another component. (Example: Mesh Collider component)
+
+### Design for clear information architecture
+
+A clear information architecture (IA) of the property settings is important to help user understand how the component works and how to configure the settings. There are several guidelines to follow when designing the IA for the component-
+
+* Is the setting really necessary? Don't show all possible settings to your users by default. Show only the absolutely needed settings on the card.
+* Use a title element to group related settings together.
+* Move the less-used settings (following the 80/20 rule) to the "Advanced" section on the button of the component card.
+* There should never be a single property nested under a caret.
+* Keep to the limitation of 3 layers.
+
+**Example**
+
+![](/static/images/tools-ui/component-card-overview-example-1.png)
+
+### Status of Component Card
+
+Updates to the component property can and should make changes to the component header. This allows the user to know if content has changed to a collapsed component card. The update should happen regardless of the header is collapsed or not.
+
+* Example 1&2: the header bar color will change when a property has been "exposed" to a root slice. This will be on both the card that has the exposed property and the parent slice who now owns the exposed property.
+* Example 3: This is an example of the default layout of the header
+* Example 4: The header text color will change to (F5A623-orange) when a property has been updated inside a component card. This allows the user to know when something has been updated inside a card, regardless if it has been collapsed or not.
+
+![](/download/attachments/66767820/image2019-8-7_13-23-6.png?version=1&modificationDate=1565209386677&api=v2)
+
+* After a property has been modified and before it has been saved. We need change the property title to Orange (E59D25) as well as the header text color, to reflect unsaved state changes. This reminds the user to save.
+
+![](/download/attachments/66767820/image2019-8-8_16-13-42.png?version=1&modificationDate=1565306022604&api=v2)
+
+![](/download/thumbnails/66767820/image2019-8-8_16-41-42.png?version=1&modificationDate=1565307702365&api=v2)
+
+* Arrow color: Orange  
+  * Currently: Orange triangles are used (#E59D25) to tell the user a child field has been recently modified.
+  * Future: Orange triangles will not be used. We will be modifying the text to be orange only and not the triangles
+
+![](/download/attachments/66767820/image2019-7-12_13-9-37.png?version=1&modificationDate=1562964410419&api=v2)
+
+* Arrow color: White
+  * In our previous version we used the arrow icon color as an indicator of child property change. With UI 2.0 we only should update the text color and not change the color of the arrow in any case.
+  * If the update is reverted or saved the the orange changes back to white
+
+![](/download/attachments/66767820/image2019-8-8_16-41-10.png?version=1&modificationDate=1565307670659&api=v2)
+
+### Reminders for UI control usage
+
+* Use the toggle component for binary actions
+* Use sliders when a user needs to eyeball the results in the viewport
+* Use drop-downs when all the known variables can be accounted for.
+
+* Any field that need to be adjust based on 3 dimensions needs to use have the XYZ value attached before the input file
+
+![](/download/attachments/66767820/image2019-7-31_13-32-0.png?version=1&modificationDate=1564605121013&api=v2)
+
+* All action buttons change the icon color and not the button color - Default icon color # E9E9E9. Hover icon color #FFFFFF.
+* In UI 2.0 we are trying to reserve the meaning of the **"X"** for things like "**clear this field" or "close this window**". The trash can is being used for **remove setting or delete elements**.
+
+**\[Content needs to be updated\]**
+
+![](/download/attachments/66767820/Screen%20Shot%202019-11-15%20at%202.02.31%20PM.png?version=2&modificationDate=1573855804736&api=v2)
+
+### Units of measure placement
+
+Sub-labels for input fields such as units of measurements can go after the input if its plain text. The only exception to this is if the input field contains the sub property. Example (Transform)
+
+![](/download/attachments/66767820/image2019-7-12_12-19-28.png?version=1&modificationDate=1562964380358&api=v2)
+
+### Use of row selection
+
+We have seen an increase need for full row selection (100% white, 10% alpha). Please make sure nothing in your rows will interfere with the ability to use row selection
+
+![](/download/attachments/66767820/image2019-7-12_13-25-38.png?version=1&modificationDate=1562964440401&api=v2)
+
+### Interaction between cards
+
+### Dragging behavior
+
+### Grouping components
+
+### Tool Tip
+
+Please use them on all properties describe the action does not what you want them to do.
+
+![](/download/attachments/66767820/image2019-7-12_13-29-55.png?version=1&modificationDate=1562964470400&api=v2)
+
+* * *
+
+Writing Guidelines
+==================
+
+For support in writing good UI and UX strings, contact [Doug Erickson](/display/~dougeric) or [lumberyard-docs@amazon.com.](mailto:lumberyard-docs@amazon.com.) The documentation team is trained in UI and UX string authoring and development. We're happy to contribute or provide editorial reviews!
+
+The AWS Docs organization has basic training in UI/UX string authoring here: [Session 2 AWS Docs: Writing for AWS: UI, UX, and U](https://broadcast.amazon.com/videos/180088)
+
+When writing effective UI/UX strings, especially messages, dialogs, and error strings, consider the following advice first:
+
+* Keep strings maximally short. The more words, the more cognitive load on the user.
+* Likewise, avoid repeating words.
+* Avoid long sentences anywhere, even if there's available space. If a sentence has multiple clauses, especially independent ones, break them into separate sentences. This is easier for the user to process quickly.
+* Choose the shortest, simplest, most common words wherever appropriate. (Documentation guidelines suggest an [American 8th grade reading level](https://www.seerinteractive.com/blog/how-to-check-your-contents-reading-level-in-word-for-pc-and-mac/).)
+* Use the imperative form. Cognitively, the user wants your instruction to continue their progress.
+* Use the active voice. The passive voice sounds like an observation or a suggestion.
+* Avoid gendering and gender-specific pronouns. Use "they" if you must refer to a person other than the user, even if you're talking about Alexa!
+* Don't be creative. Metaphors, idioms, and analogies don't translate well across different humans. The same is true for many greetings, apologies, or traditionally polite phrasing.
+* **DO** use contractions and "friendly" (informal) word syntax!
+
+Following this advice will save your users precious cognitive load, and will also reduce any future UI string localization time (and thus costs) significantly.
+
+### Grammar
+
+In line with the guidance above, grammar should be simple and typically imperative in form. For instructions, tell the user exactly what to do in as simple a sentence as possible. Favor multiple short sentences rather than compound ones. As a gut check, look at your string – does it have more than one comma? Does it have a semicolon? Parentheses (or other parenthetical notation, like em-dashes)? Rewrite it as multiple short sentences instead. Move verbs to the front where you can.
+
+* Some times, the action you indicate will have a predictable result or consequences. Based on available widget real estate and the complexity of the action, you should consider an additional short sentence indicating the result of the action so the user can choose to continue. Example: "Click 'Restart' to close Lumberyard and relaunch it. Your current work will be saved."
+
+Obviously, there are UI elements where you are not providing instruction, but are instead communicating results or an observation about the state of the system. The user wants the key information as soon as possible, so avoid any "set up" to the key message – it should be the first part of the first sentence, with any critical information or suggested actions in subsequent sentences.
+
+* Bad: "Uh oh! You may have forgotten to select the 'Save on Close' checkbox, so if you continue the shutdown, your work will not be automatically saved."
+* Good: "Warning: Your work will not be saved if you continue. Select the 'Save on Close' checkbox to automatically save your work before shutdown."
+
+### Units, Metrics, and Math
+
+* Most units should be outside of any text entry field, to the left or right as appropriate for that unit or mathematical expression. Users are unreliable and inconsistent in adding them into an entry field. If there are multiple units possible for a field, provide a drop down or other simple selector scoped to the text entry field (or group, if it applies to more than one). If the units or expressions are complex or uncommon in usage, add a tooltip on hover over the field or label.
+* Units of measurement should be consistently applied throughout the whole product, and can incur localization costs if not applied with consideration for the supported regions. For example, switching from "meters" to "inches" for similar operations, or within the same widget group could be very frustrating for a user. If there is available real estate, spell out the full name of the metric; save abbreviations for where there are clear limitations on available card or group space. Note that many metric abbreviations are overloaded (for example, "M" is used for both "meter" and "million" in English), so make sure the context is very clear to the user.  
+
+### Gut Check
+
+Empathy is a creative's strength. When developing an error message, pause, and think: "If I found myself in this situation while using the product, what exactly would I want the UI to tell me, if it were a person? How would I want it phrased or indicated, if I wanted to keep my pace and progress?" You'll find that your initial phrasing is more on point than if you attempted to simply describe it from your own technical point of view.
+
+### Forbidden Words
+
+"Forbidden words" are words that may have negative connotations in the current world climate. Some may seem silly, but using them may cause the customer to have a negative reaction. All of them have alternatives, so avoid using them in favor of the approved neutral alternative. When in doubt, ask a developer or writer for a better technical term! Likewise, API reviews often miss this consideration, so if an API name, parameter, or enumeration contains these words, request the developer to change it.
+
+| Forbidden Word | Use this instead |
+| --- | --- |
+| Blacklist/Whitelist | Deny list/Allow list **or** Exclude list/Include list |
+| Master/Slave | The choice of an alternative depends on the technical context. Some alternatives to consider are:<br><br>*Client/Agent **or** Controller/Agent<br>*   Primary/Secondary **or** Primary/Ancillary<br>*   Supervisor/Worker |
+|     |     |
+
+For a complete list of forbidden words and their approved alternatives, read ([Doug Erickson](/display/~dougeric)link to Wiki here)
+
+**Examples: ([Doug Erickson](/display/~dougeric)to populate these)**
+
+**Instructional (Message):**
+
+* Bad:
+* Good:
+
+**Informational (Message):**
+
+* Bad:
+* Good:
+
+**Error (Message):**
+
+* Bad:
+* Good:
+
+**Label (Description):**
+
+* Bad:
+* Good:
+
+**Tooltip:**
+
+* Bad:
+* Good:
+
+* * *
+
+Layout Guidelines
+=================
+
+Content alignment
+-----------------
+
+Make sure all the tree views arrow spacing are consistent. Current its 16 and 20 and 24. It should remain 16
+
+1. We should make the card two columns that prevents content from pushing into the wrong column.
+
+1. The column sizes should be 3/5th  and 2/5th
+2. We need to set a min width to the input column. A good standard to set this min-width would be based on the properties that take up the most space. That would be the XYZ translate 3 input fields. The smallest should be 3 characters per field. Roughly 48px per translate value.
+
+3. If the inspector is scaled down too small for the title. We add a “…” and allow the overflow text to be hidden. The full title should show up in a tooltip or the user can stretch the inspector panel to show the full title.
+4. Lastly, and this is not something I imagine KDAB will work on. UX will need to work with individual teams to make sure component titles are not using repetitive phrases in a tree view. Removing some repetitive words can reduce situations where titles are too long. Example “Collision” > Continuous “Collision” Detection. The second collision is not needed in the tile as its parent already represents its owned by the collision properties.
+
+|     |     |
+| --- | --- |
+| Dos | Don'ts |
+| ![](/download/attachments/66767820/image2019-11-15_13-44-29.png?version=1&modificationDate=1573854269871&api=v2) | ![](/download/attachments/66767820/image2019-11-15_13-44-22.png?version=1&modificationDate=1573854262542&api=v2) |
+
+**Related resources:**
+
+QT component: [Input Box: Line Edit](/display/lmbr/Input+Box%3A+Line+Edit)  
+QT component: [Cards  
+](/display/lmbr/---2)QT component: [Sliders  
+](/display/lmbr/Slider+Combo)QT component: [Toggle Switch  
+](/display/lmbr/Toggle+Switch)QT component: [Checkbox  
+](/display/lmbr/Checkbox)QT component: [Radio Buttons](/display/lmbr/Radio+Buttons)
+
+![](/download/attachments/66767820/image2019-11-15_17-3-10.png?version=1&modificationDate=1573866190145&api=v2)
+
+**What are the rules for lay out the component fields?**
+
+* The component properties have 3 main sections
+  * **Row header button section**: Far right corner of a title row.
+  * **Title title row**. Allowing all rows underneath to be hidden with a title to the left
+  * **Content row**: A 2 column row. Almost a 3/5 and 2/5 split of title and property.
+* All text should be left aligned within respective column
+* Within the property input section we have 9 different layouts
+  * Header row with buttons
+  * Header row NO buttons
+  * 1 input - full width
+  * 1 input - full with + buttons on right
+  * 2 input split (4px padding)
+  * 3 input split (4px padding)
+  * 4 input spit (4px padding)
+  * Single element such as toggle switch, checkbox, radio,  
+    * Text should left aligned
+* New icons have no boxes around the element (except) for ones attached to the input filed.
+
+**Staggering properties (No, Just No)**
+
+Please make sure the property titles and the property input fields are NOT staggered. It should appear as two columns. We have learned from our customers that reading the content this way helps for faster legibility.
+
+![](/download/attachments/66767820/image2019-7-12_12-13-51.png?version=1&modificationDate=1562964304413&api=v2)
+
+![](/download/attachments/66767820/Screen%20Shot%202019-11-15%20at%201.59.06%20PM.png?version=1&modificationDate=1573855170958&api=v2)
+
+Component icon usage
+--------------------
+
+* Component card icons should never use boxes around the icon.  
+  * The boxed version is for the perspective window only.  
+    * We don't want our icons to take away from the customers focus.
+  * New icons should match the appropriate color catagory for the component category. Please see the icons page for more details.
+* All Icons should be using SVG to avoid issues with 4k.
+* Icons inside the the property row should 16px by 16px
+
+![](/download/thumbnails/66767820/image2019-8-8_14-5-45.png?version=1&modificationDate=1565298345450&api=v2)
+
+### Drag bar in the input field (move to number edit UI component)
+
+Currently this behavior is an interaction requested by many customers. A way to drag an invisible bar for infinite number distances
+
+* Instead of typing in the value, the customer has a way to click hold on the icon in the far right of the input field and adjust the values via drag.
+* This drag will accelerate when going further left and right of the input field. However, moving your cursor 100px off the input field in either direction should be the max drag speed. The number will continue to increment until the mouse trigger is released or the cursor is brought back above the input field
+
+![](/download/attachments/66767820/image2019-8-8_17-1-17.png?version=1&modificationDate=1565308877745&api=v2)
+
+### Use case 4: Button patterns (move to button UI component)
+
+Please watch out for not using close as remove. This is a current problem throughout the editor.
+
+This is the pattern we are moving forward with.
+
+![](/download/attachments/66767820/image2019-7-12_13-2-58.png?version=1&modificationDate=1562964410444&api=v2)
+
+### Changing the mouse cursor on click from a property (Move to cursor usage pattern)
+
+When using the selection button, please make sure the mouse cursor is using the hand selection.
+
+![](/download/attachments/66767820/image2019-7-12_13-12-2.png?version=1&modificationDate=1562964440380&api=v2)
+
+Example of Component cards
+==========================
+
+This is not a comprehensive list. This is only to show how UI 2.0 should be applied visually to some cards.
+
+![](/download/attachments/66767820/image2019-7-12_12-41-2.png?version=1&modificationDate=1562964530420&api=v2)
+
+![](/download/attachments/66767820/image2019-7-12_12-51-25.png?version=1&modificationDate=1562964530439&api=v2)
+
+![](/download/attachments/66767820/image2019-7-12_12-39-51.png?version=1&modificationDate=1562964538017&api=v2)
