@@ -55,7 +55,7 @@ A clear information architecture (IA) of the property settings is important to h
 
 **Example**
 
-![](/static/images/tools-ui/component-card-overview-example-1.png)
+![ALT TEXT HERE](/static/images/tools-ui/component-card-overview-example-1.png)
 
 ### Status of Component Card
 
@@ -65,25 +65,25 @@ Updates to the component property can and should make changes to the component h
 * Example 3: This is an example of the default layout of the header
 * Example 4: The header text color will change to (F5A623-orange) when a property has been updated inside a component card. This allows the user to know when something has been updated inside a card, regardless if it has been collapsed or not.
 
-![](/download/attachments/66767820/image2019-8-7_13-23-6.png?version=1&modificationDate=1565209386677&api=v2)
+![ALT TEXT HERE](/static/images/tools-ui/component-card-overview-example-2.png)
 
 * After a property has been modified and before it has been saved. We need change the property title to Orange (E59D25) as well as the header text color, to reflect unsaved state changes. This reminds the user to save.
 
-![](/download/attachments/66767820/image2019-8-8_16-13-42.png?version=1&modificationDate=1565306022604&api=v2)
+![ALT TEXT HERE](/static/images/tools-ui/component-card-overview-example-3.png)
 
-![](/download/thumbnails/66767820/image2019-8-8_16-41-42.png?version=1&modificationDate=1565307702365&api=v2)
+![ALT TEXT HERE](/static/images/tools-ui/component-card-overview-example-4.png)
 
 * Arrow color: Orange  
   * Currently: Orange triangles are used (#E59D25) to tell the user a child field has been recently modified.
   * Future: Orange triangles will not be used. We will be modifying the text to be orange only and not the triangles
 
-![](/download/attachments/66767820/image2019-7-12_13-9-37.png?version=1&modificationDate=1562964410419&api=v2)
+![ALT TEXT HERE](/static/images/tools-ui/component-card-overview-example-5.png)
 
 * Arrow color: White
   * In our previous version we used the arrow icon color as an indicator of child property change. With UI 2.0 we only should update the text color and not change the color of the arrow in any case.
   * If the update is reverted or saved the the orange changes back to white
 
-![](/download/attachments/66767820/image2019-8-8_16-41-10.png?version=1&modificationDate=1565307670659&api=v2)
+![ALT TEXT HERE](/static/images/tools-ui/component-card-overview-example-6.png)
 
 ### Reminders for UI control usage
 
@@ -93,26 +93,26 @@ Updates to the component property can and should make changes to the component h
 
 * Any field that need to be adjust based on 3 dimensions needs to use have the XYZ value attached before the input file
 
-![](/download/attachments/66767820/image2019-7-31_13-32-0.png?version=1&modificationDate=1564605121013&api=v2)
+![ALT TEXT HERE](/static/images/tools-ui/component-card-overview-example-7.png)
 
 * All action buttons change the icon color and not the button color - Default icon color # E9E9E9. Hover icon color #FFFFFF.
 * In UI 2.0 we are trying to reserve the meaning of the **"X"** for things like "**clear this field" or "close this window**". The trash can is being used for **remove setting or delete elements**.
 
 **\[Content needs to be updated\]**
 
-![](/download/attachments/66767820/Screen%20Shot%202019-11-15%20at%202.02.31%20PM.png?version=2&modificationDate=1573855804736&api=v2)
+![ALT TEXT HERE](/static/images/tools-ui/component-card-overview-example-8.png)
 
 ### Units of measure placement
 
 Sub-labels for input fields such as units of measurements can go after the input if its plain text. The only exception to this is if the input field contains the sub property. Example (Transform)
 
-![](/download/attachments/66767820/image2019-7-12_12-19-28.png?version=1&modificationDate=1562964380358&api=v2)
+![ALT TEXT HERE](/static/images/tools-ui/component-card-overview-example-9.png)
 
 ### Use of row selection
 
 We have seen an increase need for full row selection (100% white, 10% alpha). Please make sure nothing in your rows will interfere with the ability to use row selection
 
-![](/download/attachments/66767820/image2019-7-12_13-25-38.png?version=1&modificationDate=1562964440401&api=v2)
+![ALT TEXT HERE](/static/images/tools-ui/component-card-overview-example-10-1.png)
 
 ### Interaction between cards
 
@@ -124,7 +124,7 @@ We have seen an increase need for full row selection (100% white, 10% alpha). Pl
 
 Please use them on all properties describe the action does not what you want them to do.
 
-![](/download/attachments/66767820/image2019-7-12_13-29-55.png?version=1&modificationDate=1562964470400&api=v2)
+![ALT TEXT HERE](/static/images/tools-ui/component-card-overview-example-10-2.png)
 
 * * *
 
@@ -179,7 +179,7 @@ Empathy is a creative's strength. When developing an error message, pause, and t
 | Master/Slave | The choice of an alternative depends on the technical context. Some alternatives to consider are:<br><br>*Client/Agent **or** Controller/Agent<br>*   Primary/Secondary **or** Primary/Ancillary<br>*   Supervisor/Worker |
 |     |     |
 
-For a complete list of forbidden words and their approved alternatives, read ([Doug Erickson](/display/~dougeric)link to Wiki here)
+For a complete list of forbidden words and their approved alternatives, read [ALT TEXT HERE]().
 
 **Examples: ([Doug Erickson](/display/~dougeric)to populate these)**
 
@@ -229,7 +229,7 @@ Make sure all the tree views arrow spacing are consistent. Current its 16 and 20
 |     |     |
 | --- | --- |
 | Dos | Don'ts |
-| ![](/download/attachments/66767820/image2019-11-15_13-44-29.png?version=1&modificationDate=1573854269871&api=v2) | ![](/download/attachments/66767820/image2019-11-15_13-44-22.png?version=1&modificationDate=1573854262542&api=v2) |
+| ![ALT TEXT HERE](/download/attachments/66767820/image2019-11-15_13-44-29.png?version=1&modificationDate=1573854269871&api=v2) | ![ALT TEXT HERE](/download/attachments/66767820/image2019-11-15_13-44-22.png?version=1&modificationDate=1573854262542&api=v2) |
 
 **Related resources:**
 
@@ -240,7 +240,7 @@ QT component: [Cards
 ](/display/lmbr/Toggle+Switch)QT component: [Checkbox  
 ](/display/lmbr/Checkbox)QT component: [Radio Buttons](/display/lmbr/Radio+Buttons)
 
-![](/download/attachments/66767820/image2019-11-15_17-3-10.png?version=1&modificationDate=1573866190145&api=v2)
+![ALT TEXT HERE](/download/attachments/66767820/image2019-11-15_17-3-10.png?version=1&modificationDate=1573866190145&api=v2)
 
 **What are the rules for lay out the component fields?**
 
@@ -265,9 +265,9 @@ QT component: [Cards
 
 Please make sure the property titles and the property input fields are NOT staggered. It should appear as two columns. We have learned from our customers that reading the content this way helps for faster legibility.
 
-![](/download/attachments/66767820/image2019-7-12_12-13-51.png?version=1&modificationDate=1562964304413&api=v2)
+![ALT TEXT HERE](/download/attachments/66767820/image2019-7-12_12-13-51.png?version=1&modificationDate=1562964304413&api=v2)
 
-![](/download/attachments/66767820/Screen%20Shot%202019-11-15%20at%201.59.06%20PM.png?version=1&modificationDate=1573855170958&api=v2)
+![ALT TEXT HERE](/download/attachments/66767820/Screen%20Shot%202019-11-15%20at%201.59.06%20PM.png?version=1&modificationDate=1573855170958&api=v2)
 
 Component icon usage
 --------------------
@@ -279,7 +279,7 @@ Component icon usage
 * All Icons should be using SVG to avoid issues with 4k.
 * Icons inside the the property row should 16px by 16px
 
-![](/download/thumbnails/66767820/image2019-8-8_14-5-45.png?version=1&modificationDate=1565298345450&api=v2)
+![ALT TEXT HERE](/download/thumbnails/66767820/image2019-8-8_14-5-45.png?version=1&modificationDate=1565298345450&api=v2)
 
 ### Drag bar in the input field (move to number edit UI component)
 
@@ -288,7 +288,7 @@ Currently this behavior is an interaction requested by many customers. A way to 
 * Instead of typing in the value, the customer has a way to click hold on the icon in the far right of the input field and adjust the values via drag.
 * This drag will accelerate when going further left and right of the input field. However, moving your cursor 100px off the input field in either direction should be the max drag speed. The number will continue to increment until the mouse trigger is released or the cursor is brought back above the input field
 
-![](/download/attachments/66767820/image2019-8-8_17-1-17.png?version=1&modificationDate=1565308877745&api=v2)
+![ALT TEXT HERE](/download/attachments/66767820/image2019-8-8_17-1-17.png?version=1&modificationDate=1565308877745&api=v2)
 
 ### Use case 4: Button patterns (move to button UI component)
 
@@ -296,21 +296,21 @@ Please watch out for not using close as remove. This is a current problem throug
 
 This is the pattern we are moving forward with.
 
-![](/download/attachments/66767820/image2019-7-12_13-2-58.png?version=1&modificationDate=1562964410444&api=v2)
+![ALT TEXT HERE](/download/attachments/66767820/image2019-7-12_13-2-58.png?version=1&modificationDate=1562964410444&api=v2)
 
 ### Changing the mouse cursor on click from a property (Move to cursor usage pattern)
 
 When using the selection button, please make sure the mouse cursor is using the hand selection.
 
-![](/download/attachments/66767820/image2019-7-12_13-12-2.png?version=1&modificationDate=1562964440380&api=v2)
+![ALT TEXT HERE](/download/attachments/66767820/image2019-7-12_13-12-2.png?version=1&modificationDate=1562964440380&api=v2)
 
 Example of Component cards
 ==========================
 
 This is not a comprehensive list. This is only to show how UI 2.0 should be applied visually to some cards.
 
-![](/download/attachments/66767820/image2019-7-12_12-41-2.png?version=1&modificationDate=1562964530420&api=v2)
+![ALT TEXT HERE](/download/attachments/66767820/image2019-7-12_12-41-2.png?version=1&modificationDate=1562964530420&api=v2)
 
-![](/download/attachments/66767820/image2019-7-12_12-51-25.png?version=1&modificationDate=1562964530439&api=v2)
+![ALT TEXT HERE](/download/attachments/66767820/image2019-7-12_12-51-25.png?version=1&modificationDate=1562964530439&api=v2)
 
-![](/download/attachments/66767820/image2019-7-12_12-39-51.png?version=1&modificationDate=1562964538017&api=v2)
+![ALT TEXT HERE](/download/attachments/66767820/image2019-7-12_12-39-51.png?version=1&modificationDate=1562964538017&api=v2)
